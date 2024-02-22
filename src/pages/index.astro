@@ -1,0 +1,322 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import Slideshow from '../components/Slideshow.vue';
+import OurWork from '../components/OurWork.vue';
+import Reviews from '../components/Reviews.vue';
+---
+
+<Layout 
+	title="Own Energy Pool Heating - "
+	description=""
+>
+	<Slideshow client:load class=""/>
+	<main>
+		<ul role="list" class="link-card-grid">
+			<Card
+				href="./cabinets"
+				title="Cabinets"
+				body="Cabinets and Closets specializes in crafting high-quality custom cabinets, tailored to meet the unique needs and style preferences of each client. Our cabinets combine functionality with aesthetic appeal, transforming any space into a beautifully organized area."
+			/>
+			<img 
+				class="border-2 border-purple-500 rounded-md"
+				src="/assets/kitchen_home_cabinets.jpg" 
+				alt="Kitchen Cabinets"
+			/>
+			<!-- <iframe 
+				width="560" 
+				height="315" 
+				src="https://www.youtube-nocookie.com/embed/AcFM1BJNuvY?si=yWOLT4SsP04h3ao0" 
+				title="YouTube video player" 
+				frameborder="0" 
+				allow=
+					"accelerometer; 
+					autoplay; 
+					clipboard-write; 
+					encrypted-media; 
+					gyroscope; 
+					picture-in-picture; 
+					web-share" 
+				allowfullscreen>
+			</iframe> -->
+
+			<!-- for desktop -->
+			<img 
+				class="hidden md:block border-2 border-purple-500 rounded-md"
+				src="/assets/closets_home.jpg" 
+				alt="Modern White Closets"
+			/>
+			<!-- <iframe 
+				class="hidden md:block"
+				width="560" 
+				height="315" 
+				src="https://www.youtube-nocookie.com/embed/yquVsR5BRCw?si=iwrKApEAetk7XhM5" 
+				title="YouTube video player" 
+				frameborder="0" 
+				allow=
+					"accelerometer; 
+					autoplay; 
+					clipboard-write; 
+					encrypted-media; 
+					gyroscope; 
+					picture-in-picture; 
+					web-share" 
+				allowfullscreen>
+			</iframe> -->
+			<Card
+				href="./closets"
+				title="Closets"
+				body="Our custom closet solutions are designed to maximize space and enhance organization in any home. With a focus on personalized design and exceptional craftsmanship, Cabinets and Closets ensures that every closet is not just a storage space, but a reflection of individual style and needs."
+			/>
+			<!-- for mobile -->
+			<img 
+				class="block md:hidden border-2 border-purple-500 rounded-md"
+				src="/assets/closets_home.jpg" 
+				alt="Modern White Closets"
+			/>
+			<!-- <iframe 
+				class="block md:hidden"
+				width="560" 
+				height="315" 
+				src="https://www.youtube-nocookie.com/embed/yquVsR5BRCw?si=iwrKApEAetk7XhM5" 
+				title="YouTube video player" 
+				frameborder="0" 
+				allow=
+					"accelerometer; 
+					autoplay; 
+					clipboard-write; 
+					encrypted-media; 
+					gyroscope; 
+					picture-in-picture; 
+					web-share" 
+				allowfullscreen>
+			</iframe> -->
+
+			<!-- <Card
+				href="https://astro.build/themes/"
+				title="Kitchens"
+				body="something about kitchens."
+			/>
+			<iframe 
+				width="560" 
+				height="315" 
+				src="https://www.youtube-nocookie.com/embed/jh5WmVM8l6Y?si=KppKW862sq2VKX8I" 
+				title="YouTube video player" 
+				frameborder="0" 
+				allow=
+					"accelerometer; 
+					autoplay; 
+					clipboard-write; 
+					encrypted-media; 
+					gyroscope; 
+					picture-in-picture; 
+					web-share" 
+				allowfullscreen>
+			</iframe> -->
+		</ul>
+		<div class="local_div flex-col md:flex-row md:items-center">
+			<div class="md:w-1/2">
+				<h1 class="local_h1">Cabinets & Closets is locally owned and operated since 2005</h1>
+				<p>Make the home you’ve always wanted a reality! We are a home remodeling contractor – home additions & renovations are our specialty.</p>
+			</div>
+			<div class="mt-6 md:mt-0 md:w-1/2 text-left md:text-center">
+				<h2 class="local_h2">&phone; (561) 221-2681</h2>
+			</div>
+		</div>
+
+		<div class="service_circles flex-col md:flex-row">
+			<div class="circle_box">
+				<div class="circle">
+					<img src="/assets/closet_with_clothes.jpg" alt="Closet with clothes">
+				</div>
+				<div class="circle_overlay">Custom Closets</div>
+				<a href="/closets" class="circle_button">Read More</a>
+			</div>
+			<div class="circle_box">
+				<div class="circle">
+					<img src="/assets/modern_bathroom_cabinets.jpg" alt="Modern bathroom cabinets">
+				</div>
+				<div class="circle_overlay">Beautiful Cabinets</div>
+				<a href="/cabinets" class="circle_button">Read More</a>
+			</div>
+			<div class="circle_box">
+				<!-- <div class="circle"> -->
+					<img src="/assets/guaranteed.png" alt="Satisfaction Guaranteed" class="sat_guar">
+				<!-- </div> -->
+				<div class="circle_overlay">Our Warranty</div>
+				<a href="/warranty" class="circle_button">Read More</a>
+			</div>
+			<div class="plans"></div>
+		</div>
+
+		<div class="team flex flex-col md:flex-row">
+			<div class="md:w-2/3 pr-6 text-center md:text-left self-center md:self-auto">
+				<h2 class="team_h2">Our Team</h2>
+				<p>Our team is made up of highly skilled and experienced professionals who are dedicated to providing you with the best service possible. We are committed to making sure that your project is completed on time, within budget, and with the highest quality workmanship.</p>
+			</div>
+			<div class="md:w-1/3 mt-6 md:mt-0">
+				<img src="/assets/blueprints_entrepreneur_hands.jpg" alt="Team">
+			</div>
+		</div>
+		<OurWork client:load/>
+		<Reviews client:load/>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		/* padding: 1rem; */
+		/* width: 800px; */
+		/* max-width: calc(100% - 2rem); */
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+	
+	.link-card-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		/* grid-row-gap: 10vh; */
+		gap: 2rem;
+		padding: 1rem;
+	}
+
+	@media screen and (max-width: 768px) {
+		.link-card-grid {
+			grid-template-columns: 1fr;
+			justify-items: center;
+		}
+	}
+
+	iframe {
+		width: 100%;
+		max-width: 560px;
+		height: auto;
+		aspect-ratio: 16 / 9;
+	}
+
+	@media screen and (max-width: 768px) {
+		iframe {
+			max-width: 100%;
+		}
+	}
+
+	.local_div {
+		background-color: black;
+		/* background-image: url("/assets/remodeling_sketch1.png"); */
+		opacity: 0.8;
+		display: flex;
+		/* align-items: center; */
+		justify-content: center;
+		padding: 2rem;
+		margin: 6rem 0 0 0;
+	}
+
+	.local_h1 {
+		font-size: 3rem;
+		font-weight: 600;
+		line-height: 1;
+		/* text-align: center; */
+		margin-bottom: 1em;
+	}
+
+	.local_h2 {
+		font-size: 2rem;
+		font-weight: 600;
+		line-height: 1;
+		/* text-align: center; */
+		margin-bottom: 1em;
+	}
+
+	.service_circles {
+		position: relative;
+		/* max-width: 900px; */
+		min-height: 500px;
+		margin: auto;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+    }
+
+	.circle_box {
+		width: 300px;
+		height: 400px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		/* border: 1px solid black; */
+		/* border-radius: 50%; */
+		/* overflow: hidden; */
+		position: relative;
+	}
+
+	.circle {
+		border-radius: 50%;
+		width: 200px;
+		height: 200px;
+		overflow: hidden;
+		position: relative;
+    }
+
+	.sat_guar {
+		max-width: 265px;
+		height: auto;
+		display: block;
+	}
+
+	.circle img {
+		max-width: 300px;
+		height: auto;
+		display: block;
+    }
+
+    .circle_overlay {
+		bottom: 10px;
+		/* background: rgba(255, 255, 255, 0.5); */
+		color: black;
+		padding: 10px;
+		text-align: center;
+    }
+
+	.circle_button {
+		display: inline-block;
+		padding: 8px 16px;
+		margin-top: 8px;
+		background-color: rgb(120, 50, 146);
+		color: white;
+		text-decoration: none;
+		border-radius: 5px;
+		transition: background-color 0.3s ease;
+    }
+
+    .circle_button:hover {
+    	background-color: rgb(90, 40, 116);
+    }
+
+    .plans {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: url('/assets/remodeling_sketch1.png') no-repeat center;
+		background-size: cover;
+		z-index: -1;
+		opacity: 0.3;
+    }
+
+	.team {
+		margin: 10rem 0 0 0;
+		padding: 2rem;
+		color: black;
+	}
+
+	.team_h2 {
+		font-size: 3rem;
+		font-weight: 600;
+		line-height: 1;
+		margin-bottom: 1em;
+	}
+</style>

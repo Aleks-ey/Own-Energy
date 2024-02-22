@@ -1,0 +1,145 @@
+---
+import Layout from '../layouts/Layout.astro';
+import OurWork from '../components/OurWork.vue';
+---
+
+<Layout 
+    title="Custom Cabinets for Every Home - Cabinets & Closets" 
+    description="Explore our range of custom cabinets tailored for kitchens, bathrooms, and living spaces. Quality craftsmanship for your home's unique needs."
+>
+    <main>
+        <div class="video_container">
+            <div class="video">
+                <div>
+                    <video src="/assets/opening_cabinet.mp4" autoplay muted loop controlslist="nofullscreen"></video>
+                </div>
+                <p class="overlay-text">Cabinet Fabrication</p>
+            </div>
+        </div>
+
+        <!-- Kitchen Cabinets Section -->
+        <div class="cabinets_container flex flex-col md:flex-row">
+            <div class="container-content md:w-1/2 border-2 border-purple-500">
+                <h2>Transform Your Kitchen with Custom Cabinets</h2>
+                <p>
+                    Elevate the heart of your home with our bespoke kitchen cabinet solutions. Our expertly crafted kitchen cabinets are not just storage spaces; they're design statements that redefine your cooking and dining experience. Whether you're a culinary enthusiast or a busy parent, our cabinets cater to all your needs, combining functionality with elegance.
+                </p>
+            </div>
+            <div class="container-image md:w-1/2 border-2 border-purple-500 rounded-md">
+                <img src="/assets/modern_kitchen_black_white_cabinets.png" alt="Kitchen Cabinets" class="rounded-md"/>
+            </div>
+        </div>
+
+        <!-- Bathroom Cabinets Section -->
+        <div class="cabinets_container flex flex-col md:flex-row-reverse">
+            <div class="container-content md:w-1/2 border-2 border-purple-500">
+                <h2>Innovative Bathroom Cabinets</h2>
+                <p>
+                    Transform your bathroom into a tranquil sanctuary with our custom bathroom cabinets. The right cabinetry can turn an ordinary bathroom into a luxurious and functional retreat, blending seamlessly with your home’s overall aesthetic.
+                </p>
+            </div>
+            <div class="container-image md:w-1/2 border-2 border-purple-500 rounded-md">
+                <img src="/assets/modern_bathroom_cabinets.jpg" alt="Bathroom Cabinets" class="rounded-md"/>
+            </div>
+        </div>
+
+        <!-- Other Cabinets Section -->
+        <div class="cabinets_container flex flex-col md:flex-row">
+            <div class="container-content md:w-1/2 border-2 border-purple-500">
+                <h2>All Cabinets</h2>
+                <p>
+                    The cabinets are the place with all the action. It’s not just the place to store items — it’s also used for organizing space, showcasing dishes, and enhancing room aesthetics. Your design needs to accommodate all these activities, which is why cabinet remodels are more popular than ever.
+                </p>
+            </div>
+            <div class="container-image md:w-1/2 border-2 border-purple-500 rounded-md">
+                <img src="/assets/kitchen_and_living_room.jpg" alt="Other Cabinets" class="rounded-md"/>
+            </div>
+        </div>
+        <OurWork client:load/>
+    </main>
+</Layout>
+
+<style>
+    .video_container {
+        position: relative;
+        height: 100vh;
+        overflow: hidden;
+        transform: translateY(-100px);
+    }
+
+    .video {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .video > div {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .video > div > video {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .overlay-text {
+        position: absolute;
+        font-size: x-large;
+        font-weight: bold;
+        left: auto;
+        color: white;
+        background-color: black;
+        padding: 10px;
+        max-width: 80%;
+        white-space: nowrap;
+    }
+
+    .cabinets_container {
+        align-items: stretch; /* Ensures children stretch to fill the container */
+    }
+
+    .container-content {
+        margin: 2rem;
+        padding: 2rem;
+        background-color: white;
+        border-radius: 0.5rem;
+    }
+
+    .container-image {
+        margin: 2rem;
+    }
+
+    .container-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .container-content h2 {
+        font-size: 1.7rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    .container-content p {
+        font-size: calc(1rem + 0.3vw);
+        margin-bottom: 1rem;
+    }
+
+    @media (max-width: 600px) {
+        .container-content h2 {
+            font-size: 1.5rem;
+        }
+
+        .container-content p {
+            font-size: 1.2rem;
+        }
+    }
+</style>

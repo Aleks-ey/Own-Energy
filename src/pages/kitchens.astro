@@ -1,0 +1,81 @@
+---
+import Layout from '../layouts/Layout.astro';
+import OurWork from '../components/OurWork.vue';
+---
+
+<Layout 
+    title="Kitchen Cabinet Solutions - Cabinets & Closets"
+    description="We’ll discover remodeling ideas for your kitchen, there are several different aspects to consider."
+>
+    <main>
+        <div class="video_container">
+            <div class="video">
+                <div>
+                    <video src="/assets/tracking_shot_kitchen_gray_white_classic.mp4" autoplay muted loop></video>
+                </div>
+                <p class="overlay-text">Kitchen Remodeling</p>
+            </div>
+        </div>
+        <div class="kitchen_container relative">
+            <div class="flex flex-col md:flex-row">
+                <div class="m-2 p-10 md:w-1/2 bg-white border-2 border-purple-500 rounded-md">
+                    <h2 class="text-3xl font-bold my-6">Kitchen Remodeling</h2>
+                    <p class="text-xl mb-6">
+                        We’ll discover remodeling ideas for your kitchen, there are several different aspects to consider.
+                    </p>
+                    <p>
+                        The kitchen is the room with all the action. It’s not just the place to cook food — it’s also used for entertaining guests, storing gadgets and eating family meals. Your design needs to provide accommodation to all these activities, which is why kitchen remodels are more popular than ever.
+                    </p>
+                </div>
+                <div class="relative m-2 p-10 md:w-1/2 bg-white border-2 border-purple-500 rounded-md">
+                    <img src="/assets/modern_red_black_kitchen.jpg" alt="Kitchen Remodeling" class="rounded-md"/>
+                    <!-- <div class="absolute w-full h-full top-0 left-0 bg-black opacity-70 -z-10"></div> -->
+                </div>
+            </div>
+        </div>
+        <OurWork />
+    </main>
+</Layout>
+
+<style>
+    .video_container {
+        position: relative;
+        height: 100vh;
+        overflow: hidden;
+        transform: translateY(-100px);
+    }
+
+    .video {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .video > div {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .video > div > video {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .overlay-text {
+        position: absolute;
+        font-size: x-large;
+        font-weight: bold;
+        left: auto;
+        color: white;
+        background-color: black;
+        padding: 10px;
+        max-width: 80%;
+        white-space: nowrap;
+    }
+</style>

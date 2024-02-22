@@ -1,0 +1,123 @@
+---
+import Layout from '../layouts/Layout.astro';
+import OurWork from '../components/OurWork.vue';
+---
+
+<Layout 
+    title="Professional Installation Services - Cabinets & Closets"
+    description="We offer complete installation services for your kitchen cabinets, bathroom cabinets, and closet systems. Our team of professionals will work with you to design and install the perfect cabinets and closets for your home."
+>
+    <main>
+        <div class="video_container">
+            <div class="video">
+                <div>
+                    <video src="/assets/white_kitchen_cabinets_pan.mp4" autoplay muted loop controlslist="nofullscreen"></video>
+                </div>
+                <p class="overlay-text">Cabinet and Closet Installation</p>
+            </div>
+        </div>
+        <div class="installation_container flex flex-col md:flex-row">
+            <div class="container-content md:w-1/2 border-2 border-purple-500">
+                <h2>Complete Installations</h2>
+                <p>
+                    We offer complete installation services for your kitchen cabinets, bathroom cabinets, and closet systems.
+                </p>
+                <p>
+                    Our team of professionals will work with you to design and install the perfect cabinets and closets for your home.
+                </p>
+            </div>
+            <div class="container-image md:w-1/2 border-2 border-purple-500 rounded-md">
+                <img src="/assets/custom_closets.jpg" alt="Closet Remodeling" class="rounded-md"/>
+            </div>
+        </div>
+        <OurWork client:load/>
+    </main>
+</Layout>
+
+<style>
+    .video_container {
+        position: relative;
+        height: 100vh;
+        overflow: hidden;
+        transform: translateY(-100px);
+    }
+
+    .video {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .video > div {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .video > div > video {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .overlay-text {
+        position: absolute;
+        font-size: x-large;
+        font-weight: bold;
+        left: auto;
+        color: white;
+        background-color: black;
+        padding: 10px;
+        max-width: 80%;
+    }
+
+    .installation_container {
+        align-items: stretch; /* Ensures children stretch to fill the container */
+    }
+
+    .container-content {
+        margin: 2rem;
+        padding: 2rem;
+        background-color: white;
+        border-radius: 0.5rem;
+    }
+
+    .container-image {
+        margin: 2rem;
+    }
+
+    .container-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .container-content h2 {
+        font-size: 1.7rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    .container-content p {
+        font-size: calc(1rem + 0.3vw);
+        margin-bottom: 1rem;
+    }
+
+    @media (max-width: 768px) {
+        .overlay-text {
+            text-align: center;
+        }
+
+        .container-content h2 {
+            font-size: 1.5rem;
+        }
+
+        .container-content p {
+            font-size: 1.2rem;
+        }
+    }
+</style>

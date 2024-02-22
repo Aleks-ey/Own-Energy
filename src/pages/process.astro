@@ -1,0 +1,40 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ProcessSteps from "../components/Process.vue";
+---
+
+<Layout 
+    title="Our Design Process - Cabinets & Closets"
+    description="Our design process is simple and easy. We work with you to create the perfect custom cabinets and closets for your home. Contact us today to get started."
+>
+    <main>
+        <ProcessSteps client:load/>
+        <div class="text-center text-xl my-10 mx-10">
+            <h1 class="">Have a specific question?</h1>
+            <p>Send us a message and we'll get back to you as soon as possible.</p>
+            <br />
+            <p>Email: info.cabinetsandclosets@gmail.com</p>
+            <p>Call: (561) 221-2681</p>
+        </div>
+    </main>
+    <!-- <form name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true">
+        <input type="hidden" name="form-name" value="contact" />
+        <p class="hidden">
+            <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+        </p>
+        <p>
+            <label>Name: <input type="text" name="name" /></label>
+        </p>
+        <p>
+            <label>Email: <input type="email" name="email" /></label>
+        </p>
+        <p>
+            <label>Message: <textarea name="message"></textarea></label>
+        </p>
+        <p>
+            <button type="submit">Send</button>
+        </p> -->
+</Layout>
+
+<style>
+</style>

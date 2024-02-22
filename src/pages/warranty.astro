@@ -1,0 +1,115 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+    title="Warranty Information - Cabinets & Closets"
+    description="Peace of mind with our comprehensive warranty for all custom cabinets and closets. Details on coverage and how to make a claim."
+>
+    <main>
+        <div class="video_container">
+            <div class="video">
+                <div>
+                    <video src="/assets/work_with_trust.mp4" autoplay muted loop></video>
+                </div>
+                <p class="overlay-text">Work with Trust</p>
+            </div>
+        </div>
+        <div class="warranty_container flex flex-col md:flex-row mb-24">
+            <div class="container-content md:w-1/2 border-2 border-purple-500">
+                <h2>One Year Warranty</h2>
+                <p>
+                    We will warranty our labor for one year after the completion of your project. No questions asked. We want to earn not just your business, but the business of every person you know. The only way to do that is by doing things right, and standing behind our work.
+                </p>
+            </div>
+            <div class="container-image md:w-1/2 border-2 border-purple-500 rounded-md">
+                <img src="/assets/modern_red_black_kitchen.jpg" alt="Modern red and black kitchen" class="rounded-md"/>
+            </div>
+        </div>
+    </main>
+</Layout>
+
+<style>
+    .video_container {
+        position: relative;
+        height: 100vh;
+        overflow: hidden;
+        transform: translateY(-100px);
+    }
+
+    .video {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .video > div {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .video > div > video {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .overlay-text {
+        position: absolute;
+        font-size: x-large;
+        font-weight: bold;
+        left: auto;
+        color: white;
+        background-color: black;
+        padding: 10px;
+        max-width: 80%;
+        white-space: nowrap;
+    }
+
+    .warranty_container {
+        align-items: stretch; /* Ensures children stretch to fill the container */
+    }
+
+    .container-content {
+        margin: 2rem;
+        padding: 2rem;
+        background-color: white;
+        border-radius: 0.5rem;
+    }
+
+    .container-image {
+        margin: 2rem;
+    }
+
+    .container-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .container-content h2 {
+        font-size: 1.7rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    .container-content p {
+        font-size: calc(1rem + 0.3vw);
+        margin-bottom: 1rem;
+    }
+
+    @media (max-width: 600px) {
+        .container-content h2 {
+            font-size: 1.5rem;
+        }
+
+        .container-content p {
+            font-size: 1.2rem;
+        }
+    }
+</style>

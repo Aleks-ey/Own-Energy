@@ -1,0 +1,76 @@
+---
+import { SEO } from 'astro-seo';
+import Footer from '../components/Footer.vue';
+import Header from '../components/Header.vue';
+
+interface Props {
+	title: string;
+	description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<SEO 
+			title={title}
+			description={description}
+			charset='UTF-8'
+			extend={{
+				link: [
+					{rel: "icon", type: "image/svg+xml", href: "/C&C_logo_white.svg"},
+					{rel: "stylesheet", href: "https://fonts.googleapis.com/icon?family=Material+Icons"}
+				],
+				meta: [
+					{name: "generator", content: Astro.generator},
+					{name: "viewport", content: "width=device-width"},
+				],
+			}}
+		/>
+	</head>
+	<body>
+		<Header client:load/>
+		<main>
+			<slot />
+		</main>
+		<Footer client:load/>
+	</body>
+</html>
+	
+<style is:global>
+	:root {
+		--accent: 136, 58, 234;
+		--accent-light: 224, 204, 250;
+		--accent-dark: 49, 10, 101;
+		--accent-gradient: linear-gradient(
+			45deg,
+			rgb(var(--accent)),
+			rgb(var(--accent-light)) 30%,
+			white 60%
+		);
+		--accent-reverse-gradient: linear-gradient(
+			45deg,
+			white,
+			rgb(var(--accent-light)) 30%,
+			rgb(var(--accent)) 60%
+		);
+	}
+	html {
+		font-family: system-ui, sans-serif;
+		background: #fff;
+		background-size: 224px;
+	}
+	code {
+		font-family:
+			Menlo,
+			Monaco,
+			Lucida Console,
+			Liberation Mono,
+			DejaVu Sans Mono,
+			Bitstream Vera Sans Mono,
+			Courier New,
+			monospace;
+	}
+</style>
